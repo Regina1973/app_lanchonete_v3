@@ -1,0 +1,26 @@
+:root {
+  /* Success */
+  --state-success-bg: #dcfce7;
+  --state-success-border: #86efac;
+  --state-success-text: #166534;
+
+  /* Warning */
+  --state-warning-bg: #fef3c7;
+  --state-warning-border: #fcd34d;
+  --state-warning-text: #92400e;
+
+  /* Error */
+  --state-error-bg: #fee2e2;
+  --state-error-border: #fca5a5;
+  --state-error-text: #991b1b;
+
+  /* Info */
+  --state-info-bg: #dbeafe;
+  --state-info-border: #93c5fd;
+  --state-info-text: #1e40af;
+
+  /* Disabled */
+  --state-disabled-bg: #f3f4f6;
+  --state-disabled-border: #d1d5db;
+  --state-disabled-text: #9ca3af;
+}
