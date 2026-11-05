@@ -1,0 +1,49 @@
+:root {
+  /* Backgrounds */
+  --background-primary: var(--color-white);
+  --background-secondary: var(--color-gray-50);
+  --background-tertiary: var(--color-gray-100);
+
+  /* Surface */
+  --surface-primary: var(--color-white);
+  --surface-secondary: var(--color-gray-50);
+
+  /* Text */
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-600);
+  --text-tertiary: var(--color-gray-500);
+
+  /* Borders */
+  --border-primary: var(--color-gray-200);
+  --border-secondary: var(--color-gray-300);
+
+  /* Interactive */
+  --interactive-primary: var(--color-primary-500);
+  --interactive-primary-hover: var(--color-primary-600);
+
+  /* Links */
+  --link-color: var(--color-primary-600);
+  --link-hover: var(--color-primary-700);
+
+  /* Feedback */
+  --success-background: var(--state-success-bg);
+  --success-border: var(--state-success-border);
+  --success-text: var(--state-success-text);
+
+  --warning-background: var(--state-warning-bg);
+  --warning-border: var(--state-warning-border);
+  --warning-text: var(--state-warning-text);
+
+  --error-background: var(--state-error-bg);
+  --error-border: var(--state-error-border);
+  --error-text: var(--state-error-text);
+
+  --info-background: var(--state-info-bg);
+  --info-border: var(--state-info-border);
+  --info-text: var(--state-info-text);
+
+  /* Disabled */
+  --disabled-background: var(--state-disabled-bg);
+  --disabled-border: var(--state-disabled-border);
+  --disabled-text: var(--state-disabled-text);
+}
