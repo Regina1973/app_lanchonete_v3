@@ -1,0 +1,31 @@
+:root {
+/* Durações */
+--duration-fast: 150ms;
+--duration-normal: 250ms;
+--duration-slow: 350ms;
+ 
+/* Curvas de animação */
+--easing-linear: linear;
+--easing-in: ease-in;
+--easing-out: ease-out;
+--easing-in-out: ease-in-out;
+ 
+/* Transições prontas */
+--transition-color:
+color var(--duration-fast) var(--easing-out);
+ 
+--transition-background:
+background-color var(--duration-fast) var(--easing-out);
+ 
+--transition-border:
+border-color var(--duration-fast) var(--easing-out);
+ 
+--transition-opacity:
+opacity var(--duration-fast) var(--easing-out);
+ 
+--transition-transform:
+transform var(--duration-normal) var(--easing-in-out);
+ 
+--transition-all:
+all var(--duration-normal) var(--easing-in-out);
+}
