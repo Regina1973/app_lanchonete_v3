@@ -2,10 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import App from "./App";
-import { ThemeProvider } from "./contexts/ThemeContext";
-import "./styles/globals.css";
-import "./styles/layout.css";
-
+import ThemeProvider from "./contexts/ThemeProvider";
 
 ReactDOM.createRoot(
   document.getElementById("root")
