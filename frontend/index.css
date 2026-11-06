@@ -1,3 +1,20 @@
+@import "./styles/tokens/colors.css";
+@import "./styles/tokens/spacing.css";
+@import "./styles/tokens/typography.css";
+@import "./styles/tokens/borders.css";
+@import "./styles/tokens/shadows.css";
+@import "./styles/tokens/motion.css";
+@import "./styles/tokens/layout.css";
+@import "./styles/tokens/states.css";
+@import "./styles/tokens/focus.css";
+@import "./styles/tokens/semantic.css";
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
