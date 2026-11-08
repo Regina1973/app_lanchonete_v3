@@ -1,11 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
-import { ThemeProvider } from "./contexts/ThemeProvider";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>
-);
+export default function App() {
+  return (
+    <div>
+      <h1>Lanchonete Carioca</h1>
+    </div>
+  );
+}
