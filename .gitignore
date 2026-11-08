@@ -1,9 +1,20 @@
-.env
-node_modules/
+# Build
+dist/
+build/
 
-
+# Backups
+*.bundle
+*.tar.gz
 *.zip
 
+# Projetos temporários
+novo_projeto/
 
-lanchonete_carioca_v3/
-sabor_carioca_backup
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Dependências
+node_modules/

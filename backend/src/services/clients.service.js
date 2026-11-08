@@ -1,4 +1,4 @@
-//deve conter a logica
+// deve conter a logica
 
 const clients = [];
 
@@ -16,6 +16,25 @@ exports.createClient = (client) => {
 
   return newClient;
 };
+
+exports.getClientById = (id) => {
+  return clients.find(
+    (client) => client.id === id
+  );
+};
+
+exports.updateClient = (
+  id,
+  updatedData
+) => {
+  const index = clients.findIndex(
+    (client) => client.id === id
+  );
+
+  if (index === -1) {
+    return null;
+  }
+
   clients[index] = {
     ...clients[index],
     ...updatedData,

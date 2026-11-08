@@ -1,41 +1,3 @@
-const clients = [];
-
-exports.getClients = () => {
-  return clients;
-};
-
-exports.createClient = (client) => {
-  const newClient = {
-    id: Date.now().toString(),
-    ...client,
-  };
-
-  clients.push(newClient);
-
-  return newClient;
-};
-
-exports.getClientById = (id) => {
-  return clients.find((client) => client.id === id);
-};
-
-exports.updateClient = (id, updatedData) => {
-  const index = clients.findIndex(
-    (client) => client.id === id
-  );
-
-  if (index === -1) {
-    return null;
-  }
-
-  clients[index] = {
-    ...clients[index],
-    ...updatedData,
-  };
-
-  return clients[index];
-};
-
 const clientService = require("../services/clients.service");
 
 exports.getClients = (req, res) => {
@@ -49,4 +11,45 @@ exports.createClient = (req, res) => {
 };
 
 exports.getClientById = (req, res) => {
-  const client = clientService.getClientById(req.params};
+  const client = clientService.getClientById(
+    req.params.id
+  );
+
+  if (!client) {
+    return res.status(404).json({
+      message: "Cliente não encontrado",
+    });
+  }
+
+  res.json(client);
+};
+
+exports.updateClient = (req, res) => {
+  const updatedClient =
+    clientService.updateClient(
+      req.params.id,
+      req.body
+    );
+
+  if (!updatedClient) {
+    return res.status(404).json({
+      message: "Cliente não encontrado",
+    });
+  }
+
+  res.json(updatedClient);
+};
+
+exports.deleteClient = (req, res) => {
+  const deleted = clientService.deleteClient(
+    req.params.id
+  );
+
+  if (!deleted) {
+    return res.status(404).json({
+      message: "Cliente não encontrado",
+    });
+  }
+
+  res.status(204).send();
+};
