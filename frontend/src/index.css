@@ -9,6 +9,13 @@
 @import "./styles/tokens/focus.css";
 @import "./styles/tokens/semantic.css";
 
+@import "./styles/theme-light.css";
+@import "./styles/theme-dark.css";
+@import "./styles/theme-monochrome-light.css";
+@import "./styles/theme-monochrome-dark.css";
+
+@import "./styles/globals.css";
+
 html,
 body,
 #root {

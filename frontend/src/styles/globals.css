@@ -11,15 +11,12 @@ min-height: 100vh;
 }
  
 body {
-background-color: var(--bg);
-color: var(--text);
- 
-font-family:
-Arial,
-Helvetica,
-sans-serif;
- 
-line-height: 1.5;
+  background-color: var(--color-background);
+  color: var(--color-text);
+
+  font-family: var(--font-family-base);
+
+  line-height: var(--line-height-normal);
 }
  
 a {

@@ -1,0 +1,29 @@
+:root {
+  /* tokens existentes */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  ...
+
+  --color-info-500: #0ea5e9;
+  --color-info-600: #0284c7;
+
+  /* ==================================================
+   * BRANDING — LANCHONETE CARIOCA
+   * ================================================== */
+
+  --brand-primary: #355E3B;
+  --brand-primary-dark: #2A4A2F;
+
+  --brand-secondary: #D97925;
+  --brand-accent: #C5A03A;
+
+  --brand-wood: #8A5A44;
+
+  --brand-background: #F5F1E8;
+  --brand-surface: #FFFCF8;
+
+  --brand-text: #2D2D2D;
+  --brand-text-muted: #6B7280;
+}
+
