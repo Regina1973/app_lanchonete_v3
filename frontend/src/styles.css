@@ -197,41 +197,41 @@ body {
 
  .cart-header {
 margin-top: 20px;
- 
+
 display: flex;
- 
+
 justify-content: center;
- 
+
 align-items: center;
- 
+
 gap: 16px;
- 
+
 flex-wrap: wrap;
 }
- 
+
 .btn-cart {
 background: var(--orange);
- 
+
 color: white;
- 
+
 border: none;
- 
+
 border-radius: 12px;
- 
+
 padding: 12px 24px;
- 
+
 font-size: 1rem;
- 
+
 font-weight: bold;
- 
+
 cursor: pointer;
- 
+
 transition: all 0.2s ease;
 }
- 
+
 .btn-cart:hover {
 background: #e65c00;
- 
+
 transform: translateY(-2px);
 }
 }
