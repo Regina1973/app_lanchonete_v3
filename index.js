@@ -1,30 +1,11 @@
 require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
 
-const authRoutes = require("./backend/src/routes/auth.routes");
-const userRoutes = require("./backend/src/routes/user.routes");
+console.log("JWT_SECRET =", process.env.JWT_SECRET);
 
-const app = express();
+const app = require("./backend/src/App");
 
-app.use(cors());
-app.use(express.json());
+const PORT = process.env.PORT || 3000;
 
-// rotas temporárias
-//app.use("/src/auth", authRoutes);
-//app.use("/src/users", userRoutes);
-
-//rota definitiva
-app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes);
-/*
-Agora nao tem banco ,mas quando houver 
-
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/lanchonete");
-
-
-*/
-app.listen(3000, () => {
-  console.log("Servidor rodando na porta 3000");
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
