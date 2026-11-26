@@ -17,7 +17,6 @@ function App() {
         setProducts(response.data);
       } catch (err) {
         console.error(err);
-
         setError(
           "Não foi possível carregar os produtos."
         );
@@ -32,8 +31,39 @@ function App() {
   function handleAddToCart(product) {
     setCart((currentCart) => [
       ...currentCart,
-      product
+      product,
     ]);
+  }
+
+  function handleRemoveFromCart(indexToRemove) {
+    setCart((currentCart) =>
+      currentCart.filter(
+        (_, index) => index !== indexToRemove
+      )
+    );
+  }
+
+  function handleViewCart() {
+    if (cart.length === 0) {
+      alert("Seu pedido está vazio.");
+      return;
+    }
+
+    const items = cart
+      .map(
+        (item, index) =>
+          `${index + 1}. ${item.nome} - R$ ${item.preco.toFixed(2)}`
+      )
+      .join("\n");
+
+    const total = cart.reduce(
+      (sum, item) => sum + item.preco,
+      0
+    );
+
+    alert(
+      `Itens do pedido:\n\n${items}\n\nTotal: R$ ${total.toFixed(2)}`
+    );
   }
 
   return (
@@ -47,20 +77,61 @@ function App() {
         </p>
 
         <div className="cart-header">
-  <h3>
-    🛒 Pedido: {cart.length} item(ns)
-  </h3>
+          <h3>
+            🛒 Pedido: {cart.length} item(ns)
+          </h3>
 
-        <button className="btn-cart">
-    Ver Pedido
-         </button>
-       </div>
+          <button
+            className="btn-cart"
+            onClick={handleViewCart}
+          >
+            Ver Pedido
+          </button>
+        </div>
       </header>
 
       {cart.length > 0 && (
-        <div className="cart-info">
-          🛒 Você selecionou {cart.length} produto(s)
-        </div>
+        <>
+          <div className="cart-info">
+            🛒 Você selecionou {cart.length} produto(s)
+          </div>
+
+          <div className="cart-list">
+            <h3>Meu Pedido</h3>
+
+            {cart.map((item, index) => (
+              <div
+                key={`${item.id}-${index}`}
+                className="cart-item"
+              >
+                <span>
+                  {item.nome} - R${" "}
+                  {item.preco.toFixed(2)}
+                </span>
+
+                <button
+                  className="btn-remove"
+                  onClick={() =>
+                    handleRemoveFromCart(index)
+                  }
+                >
+                  Remover
+                </button>
+              </div>
+            ))}
+
+            <div className="cart-total">
+              Total: R${" "}
+              {cart
+                .reduce(
+                  (sum, item) =>
+                    sum + item.preco,
+                  0
+                )
+                .toFixed(2)}
+            </div>
+          </div>
+        </>
       )}
 
       {loading && (
