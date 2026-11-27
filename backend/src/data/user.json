@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "name": "Administrador",
-    "email": "admin@lanchonete.com",
-    "password": "$2b$10$2v8v6jRnMi9P8v6QL8nYk.c9oKhg9r4NlVdTJhI7gY9g7sz6J3m4a"
+    "email": "admin@email.com",
+    "password": "...",
+    "role": "admin"
   },
   {
-    "id": 1731850000000,
-    "name": "Aline",
-    "email": "aline@teste.com",
-    "password": "$2b$10$2v8v6jRnMi9P8v6QL8nYk.c9oKhg9r4NlVdTJhI7gY9g7sz6J3m4a"
+    "id": 2,
+    "email": "funcionario@email.com",
+    "password": "...",
+    "role": "employee"
   }
 ]

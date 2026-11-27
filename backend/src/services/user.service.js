@@ -1,70 +1,31 @@
 const fs = require("fs");
 const path = require("path");
-const bcrypt = require("bcryptjs");
+const filePath = path.join(__dirname, "../data/user.json");
 
-const usersFile = path.join(
-  __dirname,
-  "../data/users.json"
-);
 
 function getUsers() {
-  return JSON.parse(
-    fs.readFileSync(usersFile, "utf8")
-  );
+  const data = fs.readFileSync(filePath);
+  return JSON.parse(data);
 }
 
 function saveUsers(users) {
-  fs.writeFileSync(
-    usersFile,
-    JSON.stringify(users, null, 2)
-  );
+  fs.writeFileSync(filePath, JSON.stringify(users, null, 2));
 }
 
-async function createUser(data) {
+function findByEmail(email) {
   const users = getUsers();
+  return users.find(user => user.email === email);
+}
 
-  const exists = users.find(
-    (user) => user.email === data.email
-  );
-
-  if (exists) {
-    throw new Error(
-      "E-mail já cadastrado"
-    );
-  }
-
-  const hashedPassword =
-    await bcrypt.hash(data.password, 10);
-
-  const newUser = {
-    id: Date.now(),
-    name: data.name,
-    email: data.email,
-    password: hashedPassword
-  };
-
-  users.push(newUser);
-
+function createUser(user) {
+  const users = getUsers();
+  users.push(user);
   saveUsers(users);
-
-  return {
-    id: newUser.id,
-    name: newUser.name,
-    email: newUser.email
-  };
-}
-
-function listUsers() {
-  const users = getUsers();
-
-  return users.map((user) => ({
-    id: user.id,
-    name: user.name,
-    email: user.email
-  }));
+  return user;
 }
 
 module.exports = {
-  createUser,
-  listUsers
+  getUsers,
+  findByEmail,
+  createUser
 };
